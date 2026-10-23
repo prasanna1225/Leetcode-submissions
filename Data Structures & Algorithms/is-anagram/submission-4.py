@@ -1,0 +1,16 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s)!=len(t):
+            return False
+        dicts, dictt={}, {}
+        for i in s:
+            if i not in dicts:
+                dicts[i]=s.count(i)
+        for j in t:
+            if j not in dictt:
+                dictt[j]=t.count(j)
+        return dicts == dictt
+# Time: (O(n^2)) — count() scans the string for each distinct character.
+
+# Space: (O(n)) — the two dictionaries store character frequencies.
+        
